@@ -1,0 +1,89 @@
+
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<style>
+hr
+{
+    border: 3px solid #000080;
+}
+
+p {color:#330000;
+text-align:right;
+margin-right: 100px;
+margin-left: 0px;
+font-size: 24px;
+font-weight: bold;
+}
+
+
+body{
+
+height:100%;
+width:100%;
+background-color: lightgrey;
+}
+
+.button
+{
+padding:1% 6%;	
+border-radius: 16px;
+text-align: center;
+border: solid;
+border-color: #625D5D;
+font-weight: bold;
+font-size: 22px;
+box-shadow: 10px 10px 5px #888888;
+white-space: normal;
+
+}
+
+.mydiv{
+	padding:1% 1%;
+	text-align: center;
+	height:80px;
+	width:500px;
+	background:silver;
+	border-radius: 16px;
+	border: solid;
+	border-color: #000080;
+	margin-left: 120px;
+	margin:auto;
+	 box-shadow: 10px 10px 5px #888888;
+
+}
+
+
+button:hover {background:#95B9C7;border-color:black;}
+
+</style>
+<title>-----Home Automation Server-----</title>
+<link rel = "icon" type = "image/png" sizes = "16 x 16" href = "./favicon.ico">
+</head>
+<body>
+<hr></hr><hr></hr><hr></hr>
+<br><br>
+<div class="mydiv">
+<h1>-Home Automation Server-</h1><br>
+<br></div>
+<br><br>
+<hr></hr>
+<hr></hr>
+<hr></hr>
+<br><br>
+<div class="mydiv">
+<p>Red: <a href="?pin=ON1"><button class="button">ON</button></a>&nbsp;<a href="?pin=OFF1"><button class="button">OFF</button></a></p><br>
+</div><br>
+
+<div class="mydiv">
+<p>Green:   <a href="?pin=ON2"><button class="button">ON</button></a>&nbsp;<a href="?pin=OFF2"><button class ="button">OFF</button></a></li>
+</div><br>
+
+<div class="mydiv">
+<p>GARAGE DOOR: <a href="?pin=actuate"><button  class="button">ACTUATE</button></a>&nbsp;</div><br>
+</div><br>
+
+</body>
+</html>

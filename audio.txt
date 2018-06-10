@@ -1,0 +1,6 @@
+ var obj = document.createElement('audio');
+		obj.src="alarm.mp3";
+		obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;       
+        obj.play();

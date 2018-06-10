@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<!--  Only works on Safari, other browsers have issues with blocking auto play and pop-ups-->
+
+	<head>
+	
+		<title></title>
+	</head>
+	
+	
+		<body>
+			
+<!--<audio id ="aclick">
+<source src="http://sfxcontent.s3.amazonaws.com/soundfx/AirplaneSeatbeltChime.mp3"
+ type="audio/mpeg"></source>
+</audio>-->
+<audio id ="aclick">
+<source src="AirHorn.mp3" audio/mpeg"></source>
+</audio>
+
+
+<audio id ="bclick">
+<source src="http://sfxcontent.s3.amazonaws.com/soundfx/44magnum.mp3" audio/mpeg"></source>
+</audio>
+
+<audio id ="cclick">
+<source src="http://sfxcontent.s3.amazonaws.com/soundfx/PowerDown.mp3" type= "audio/mpeg"></source>
+</audio>
+
+<audio id ="dclick">
+<source src="http://sfxcontent.s3.amazonaws.com/soundfx/SlideWhistle.mp3" ></source>
+</audio>
+
+
+<script>
+	//document.getElementById("aclick").play();
+	var el =["aclick", "bclic", "cclick", "dclick"];
+	
+	el.forEach(function(el, index){
+    document.write(el + "<br>");
+	console.log("index element : "+ index+" " +el );
+
+
+});
+
+var som1 = function(){
+		
+	var oub = document.getElementById("aclick");
+	oub.play();console.log(oub.id);
+	oub.addEventListener("ended", som2);
+	//oub.onended = som2;
+		}
+var som2 = function(){
+	var oub = document.getElementById("cclick");
+	oub.play();console.log(oub.id);
+	oub.addEventListener("ended",som3);
+	//oub.onended = som3;
+		}
+var som3 = function(){
+	var oub = document.getElementById("bclick");
+	oub.play();console.log(oub.id);
+	//oub.addEventListener("ended",som4);
+	oub.onended = som4;
+		}
+var som4 = function(){
+	var oub = document.getElementById("dclick");
+	oub.play();console.log(oub.id);
+	
+		}
+		
+		som1();
+	
+	</script>
+	</body>
+</html>

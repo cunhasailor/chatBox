@@ -1,0 +1,17 @@
+{
+  "name": "iochat",
+  "version": "1.0.0",
+  "description": "simple io chat box",
+  "main": "serverxp.js",
+  "entry point": "server.js"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sunda",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "socket.io": "^2.0.4"
+  }
+}

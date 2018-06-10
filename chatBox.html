@@ -1,0 +1,176 @@
+<!DOCTYPE html >
+<html>
+<head>
+			<title>---Chat Box---</title>
+<style>
+body {
+background-color: #fefbd8;
+}
+
+div{
+width:80%;
+height:200px;
+margin:0 auto;
+border:2px #000 solid;
+border-radius:20px; 
+margin-top:5px;
+<!--box-shadow: 5px 5px #0DF1F1;->
+
+}	
+
+#hello{
+background-color:#FAE5D3;
+height:80px;
+text-align: center;
+}	
+
+#traffic{
+background-color:#D5B79D;
+height:400px;
+}	
+
+#message{
+background-color:#9DB1D5;
+height:130px;
+font: 16px;
+}
+
+#traffic{ 
+list-style-type: none; 
+margin: 0 auto; 
+padding: 0;
+position: relative; 
+margin-top:5px;
+overflow: scroll;
+transform: rotate(180deg);
+}
+ 
+#traffic li {
+padding: 5px 10px;
+transform: rotate(180deg);}
+#traffic li:nth-child(odd) {
+background: #eee;
+}
+
+.bottom{
+background-color:#CCBFDA;
+width:80%;
+height:3%;
+
+}
+
+.bottom p{
+text-align: center;
+vertical-align: center;
+font-size: 2;
+}
+
+#label{
+text-align: center;
+margin: 0 auto;
+}
+
+input
+{
+width:80%;
+height:30px;
+margin-top:10px;
+margin-left:10px;
+}
+
+button
+{
+background:#AED6F1; 
+border:2px #000 solid;
+border-radius:10px; 
+height: 30px;
+width: 100px;
+margin-top:10px;
+margin-left:50px;
+
+}
+</style>
+</head>	
+	<body>
+	
+
+	
+<div  id ="hello">
+<span><h1>  --- Chat-Box ---</h1></span>
+</div>
+
+<div id ="traffic">
+    <ul id="messages"></ul>
+</div>
+
+<div id="message">
+<p id="label">   Message: </p>
+
+<form  action="">
+      <input placeholder = "enter text" id="m" autocomplete="off" /><br>
+				<button>Send</button>
+					</form>
+
+
+
+</div>
+
+<div class = "bottom">
+<p>  <strong>--- marbeleza.com ---</strong></p>
+</div>
+
+<!-- seatBelt.mp3-->
+<audio id ="bclick"  >
+<source src="http://sfxcontent.s3.amazonaws.com/soundfx/AirplaneSeatbeltChime.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 44Magnun.mp3-->
+<audio id ="aclick">
+<source src="http://sfxcontent.s3.amazonaws.com/soundfx/44magnum.mp3" type="audio/mpeg"></source>
+</audio>
+	
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+$(document).ready(function(){
+	var socket = io();
+    $('form').submit(function(e){
+	e.preventDefault();
+	socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+						 });
+ 	 socket.on('chat message', function(msg){
+
+      $('#messages').prepend($('<li>').text( msg));
+	if (butn){document.getElementById('aclick').play();}
+	butn = true;
+
+});
+  
+socket.on('notify', function(ende){	
+	//confirm(butn);
+	//if(butn){$('#aclick')[0].play();}
+	//if (butn){document.getElementById('aclick').play();}
+	//butn = true;
+	var id = socket.io.engine.id;
+
+});	
+
+
+});
+</script>
+
+<script>
+var butn = true;
+ $(function(){
+    $('button').click(function() {
+	$('#bclick')[0].play();
+	butn = false;
+    });
+ });
+</script>
+
+   
+</body>
+</html>
